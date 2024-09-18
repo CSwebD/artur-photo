@@ -4,28 +4,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artur Ganaev Photography</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+                z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul:first-child {
+            margin-left: 20px;
+        }
+
+        nav ul:last-child {
+            margin-right: 40px;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        .special-button a {
+            background-color: #ffcc00;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .special-button a:hover {
+            background-color: #ff9900;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #about {
+            display: flex;
+        }
+
+        .about-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .about-photo {
+            background-color: #99ff99;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            height: 100%;
+        }
+
+        .about-description {
+            background-color: #ff9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .portfolio-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            height: 100%;
+            width: 100%;
+        }
+
+        .item1 { background-color: #ff9999; }
+        .item2 { background-color: #99ff99; }
+        .item3 { background-color: #9999ff; }
+        .item4 { background-color: #ffff99; }
+        .item5 { background-color: #ffcc99; }
+
+        /* Contact Section Styling */
+        #contact {
+            position: relative;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .contact-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://via.placeholder.com/1200'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4; /* Transparent image */
+            z-index: 1;
+        }
+
+        .contact-small-square {
+            position: relative;
+            width: 90%; /* 5% smaller on both sides */
+            height: 70%;
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent square */
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black square */
+            padding: 40px;
+            color: white;
+            text-align: center;
+            z-index: 3; /* Ensures it's on top */
+            width: 80%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: 3; /* Ensures it's visible */
+            color: white;
+        }
+
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+        <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#signin">Sign In</a></li>
+            <li class="special-button"><a href="#signin">Join</a></li>
         </ul>
     </nav>
 
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to Artur Ganaev Photography, specializing in corporate headshots, corporate events, portraits, maternity, studio, boudoir, events, newborn, and family photography.</h1>
+        <p>Capturing moments, creating memories.</p>
+    </section>
+
     <!-- About Section -->
     <section id="about">
-        <div class="container">
-            <div class="about-photo">
-                <img src="photographer.jpg" alt="Photographer Photo">
-            </div>
+        <div class="about-container">
             <div class="about-description">
-                <p>About the photographer...</p>
+                <div class="text-box">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm Artur Ganaev, a passionate photographer specializing in corporate headshots, corporate events, portraits, maternity, studio, boudoir, events, newborn, and family photography.</p>
+                </div>
+            </div>
+            <div class="about-photo">
+                <img src="https://via.placeholder.com/300" alt="Photographer Photo">
             </div>
         </div>
     </section>
@@ -33,17 +242,24 @@
     <!-- Portfolio Section -->
     <section id="portfolio">
         <div class="portfolio-grid">
-            <div class="portfolio-item item1"></div>
-            <div class="portfolio-item item2"></div>
-            <div class="portfolio-item item3"></div>
-            <div class="portfolio-item item4"></div>
+            <div class="portfolio-item item1">Item 1</div>
+            <div class="portfolio-item item2">Item 2</div>
+            <div class="portfolio-item item3">Item 3</div>
+            <div class="portfolio-item item4">Item 4</div>
+            <div class="portfolio-item item5">Item 5</div>
         </div>
     </section>
 
-    <!-- Contact and Footer Section -->
+    <!-- Contact Section -->
     <section id="contact">
-        <div class="contact-info">
-            <p>Contact information...</p>
+        <div class="contact-bg-image"></div>
+        <div class="contact-small-square">
+            <div class="contact-info">
+                <h2>Contact</h2>
+                <p>Email: artur@example.com</p>
+                <p>Phone: +1234567890</p>
+                <p>Follow me on <a href="#">Instagram</a> and <a href="#">Facebook</a></p>
+            </div>
         </div>
         <footer>
             <p>&copy; 2024 Artur Ganaev Photography</p>
