@@ -1,85 +1,59 @@
-/* Reset some default styles */
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-}
-
-/* General styling */
+/* Basic reset and styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-}
-
-header .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-header h1 {
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-header nav ul {
-    list-style: none;
+nav ul {
+    list-style-type: none;
+    margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-header nav ul li {
-    display: inline;
-    margin-right: 1rem;
+nav ul li {
+    margin: 10px;
 }
 
-header nav ul li a {
-    color: #fff;
+nav ul li a {
     text-decoration: none;
+    color: #000;
 }
 
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.section {
-    padding: 2rem 1rem;
-    background-color: #fff;
-    margin-bottom: 1rem;
-}
-
-.section:nth-of-type(odd) {
-    background-color: #f9f9f9;
+section {
+    padding: 20px;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.gallery {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.gallery img {
-    width: 100%;
-    max-width: 300px;
+.about-photo img {
+    max-width: 100%;
     height: auto;
-    border: 2px solid #ddd;
-    border-radius: 5px;
 }
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.portfolio-item {
+    background-color: #ccc;
+    height: 200px; /* Adjust as needed */
+}
+
+.item1 { background-color: #ff9999; }
+.item2 { background-color: #99ff99; }
+.item3 { background-color: #9999ff; }
+.item4 { background-color: #ffff99; }
 
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
     text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
 }
